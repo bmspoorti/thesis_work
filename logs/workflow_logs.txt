@@ -1,0 +1,113 @@
+
+============================================================
+🕒 Timestamp: 2025-07-21T22:06:32.426184
+🔍 Query: What subjects are covered in Applied Data Science?
+🤖 Routed Agent: curriculum
+📤 Final Answer:
+The Applied Data Science & Artificial Intelligence Master's program covers a wide range of subjects. These include:
+
+1. Mathematical, statistical, analytical, and machine learning/deep learning techniques for data analysis.
+2. Data Engineering, including ETL (Extract, Transform, Load), data pipelines, and distributed computing with Apache Spark, Hadoop, and Kafka.
+3. Natural Language Processing (NLP), including text analytics, sentiment analysis, chatbots, and language models using Transformer models (BERT, GPT), SpaCy, and NLTK.
+4. Deep Learning, with a focus on neural networks and reinforcement learning.
+5. Design Thinking for Data Science, which involves applying human-centered design approaches to develop innovative and impactful AI-driven solutions.
+6. Data Visualization & Storytelling, where students learn to transform complex data into clear, impactful insights using Tableau, Power BI, and Matplotlib.
+7. Computer Vision, which involves working with image recognition, object detection, and facial recognition using OpenCV, CNNs, and GANs.
+8. Use of Tableau for data visualization and business intelligence, including exploratory data analysis, reporting, and business intelligence.
+9. Handling large datasets using SQL, NoSQL, and cloud storage solutions like AWS, Google Cloud, and Azure.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-21T22:07:12.441864
+🔍 Query: Are there job openings for data analysts in Germany?
+🤖 Routed Agent: job_market
+📤 Final Answer:
+
+============================================================
+🕒 Timestamp: 2025-07-21T22:08:26.807378
+🔍 Query: How well do my course skills match the job market?
+🤖 Routed Agent: curriculum
+📤 Final Answer:
+Based on the context provided, the course seems to equip students with skills that are highly relevant to the job market. The training includes optimization techniques, deployment on GPUs, and use of TensorFlow, PyTorch, and NVIDIA CUDA, which are all important skills in the fields of machine learning, AI research, and cloud computing. The course also provides hands-on experience with real-world AI applications. 
+
+Graduates from previous years have found work in a variety of sectors including manufacturing, banking, insurance, IT, consulting, healthcare, and at colleges and universities. They've been employed at major companies like ABB, Heidelberg Cement, Airbus, Accenture, Adidas, Audi, Bosch, BMW, BASF, Deloitte, Deutsche Börse, DKFZ, PWC, SAP and Verivox. 
+
+The course also prepares students for a variety of roles such as Data Scientist, ML Engineer, Business Intelligence Analyst, Data Engineer, Consultant, Operations Analyst, Market Research Analyst, Data Architect, Machine Learning Engineer, and Data Steward. These roles are in demand in various industries including technology, content generation, healthcare, e-commerce, manufacturing, and automotive. 
+
+Therefore, it appears that the skills acquired in this course are well-matched to the current job market.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-21T22:09:12.293409
+🔍 Query: Can you recommend books on Natural Language Processing?
+🤖 Routed Agent: books
+📤 Final Answer:
+- "Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics and Speech Recognition" by Dan Jurafsky
+- "Python Natural Language Processing" by Jalaj Thanaki
+- "What's Behind Your Belly Button?" - a book listed under NLP (Neuro-Linguistic Programming) category
+- "On Learning to Heal: or, What Medicine Doesn't Know" - another book listed under NLP category
+- "Manage My Emotions: What I Wish I'd Known" - also listed under NLP category
+- For more options, you can explore the list of essential books on Natural Language Processing on Goodreads: [Link](https://www.goodreads.com/list/show/78485.Essential_books_on_Natural_Language_Processing)
+- You can also check out books similar to "Speech and Language Processing" on Goodreads: [Link](https://www.goodreads.com/book/similar/893186-speech-and-language-processing-an-introduction-to-natural-language-proc)
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-21T22:09:34.685638
+🔍 Query: Tell me about visa rules for Indian students
+🤖 Routed Agent: fallback
+📤 Final Answer:
+I'm sorry, but as a university assistant chatbot, I don't have the specific information about visa rules for Indian students. Visa regulations can vary greatly depending on the destination country and can change frequently. I recommend checking the official website of the embassy or consulate of the country you're interested in for the most accurate and up-to-date information. You may also want to consult with an immigration advisor or legal expert.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-22T21:34:13.503050
+🔍 Query: what will I learn in Applied Data Science and Analytics?
+🤖 Routed Agent: fallback
+📤 Final Answer:
+In an Applied Data Science and Analytics course, you can expect to learn a variety of skills and concepts. Here are some key areas that are typically covered:
+
+1. **Data Analysis**: You'll learn how to analyze and interpret complex data sets, using statistical techniques and software.
+
+2. **Machine Learning**: This involves teaching computers to learn from data. You'll learn various algorithms and models, and how to apply them to real-world problems.
+
+3. **Data Visualization**: You'll learn how to present data in a visual context, making complex data more understandable and usable.
+
+4. **Programming**: You'll likely learn programming languages like Python and R, which are commonly used in data science.
+
+5. **Big Data Technologies**: You'll learn how to work with big data platforms like Hadoop and Spark.
+
+6. **Database Management**: This involves learning SQL and NoSQL databases, data warehousing, and data cleaning.
+
+7. **Predictive Analytics**: You'll learn how to use data to make predictions about future events.
+
+8. **Ethics in Data Science**: This covers the ethical considerations when working with data, including privacy and data security.
+
+Remember, the exact curriculum can vary depending on the university or institution offering the course. It's always a good idea to check the specific course content before enrolling.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-22T21:35:22.487868
+🔍 Query: What courses are taught in the Data Science?
+🤖 Routed Agent: curriculum
+📤 Final Answer:
+The Data Science program includes courses on Python, R, SQL, machine learning, cloud computing, and big data analytics. It also includes a course on Design Thinking for Data Science, where students learn to apply human-centered design approaches to develop AI-driven solutions. Specialization tracks include Data Visualization & Storytelling, where students learn to use Tableau, Power BI, and Matplotlib to transform complex data into clear insights, and Computer Vision, where students work with image recognition, object detection, and facial recognition using OpenCV, CNNs, and GANs. The program also integrates Tableau for teaching data visualization and analytics.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-22T21:52:20.491742
+🔍 Query: list of books for Deep Learning
+🤖 Routed Agent: books
+📤 Final Answer:
+- "Deep Learning for Coders with Fastai and Pytorch: AI Applications Without a PhD" by Jeremy Howard and Sylvain Gugger
+- "An Introduction to Statistical Learning: with Applications in R" by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani
+- "Deep Learning" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+- "Deep Learning Quick Reference: Useful hacks for training and optimizing deep neural networks with TensorFlow and Keras" by Michael Bernico
+- "Artificial Neural Networks And Deep Learning" by Michael Taylor
+- "Learning Deeper" - a collection of deep-learning, machine-learning, and data-science oriented books.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-07-25T22:20:40.772183
+🔍 Query: What are skills missing in my curriculum?
+🤖 Routed Agent: skill_mapping
+📤 Final Answer:

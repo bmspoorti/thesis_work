@@ -1,0 +1,29 @@
+# Core LLM and LangChain Stack
+openai>=1.0.0
+langchain==0.1.14
+langgraph>=0.0.30
+
+# PDF Parsing
+pdfplumber>=0.10.2
+PyMuPDF>=1.23.2
+pydantic==1.10.13
+
+# Embeddings and Vector Stores
+qdrant-client>=1.6.0
+chromadb>=0.4.24
+
+# Web Search + Tools
+serpapi>=0.1.4
+requests>=2.31.0
+
+# Environment and Utility
+python-dotenv>=1.0.0
+tiktoken>=0.6.0
+
+# App + UI (for later)
+streamlit>=1.35.0
+
+# Dev + Debug
+ipython>=8.21.0
+rich>=13.7.0
+
