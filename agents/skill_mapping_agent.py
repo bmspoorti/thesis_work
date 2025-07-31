@@ -40,8 +40,6 @@ def load_job_listings():
 
 
 def extract_skills_from_texts(curriculum_docs, job_listings):
-    # You can replace this with an actual skill extractor if you build one
-    # For now, we assume basic placeholder fields
     curriculum_skills = set()
     job_skills = set()
 
@@ -59,8 +57,13 @@ def extract_skills_from_texts(curriculum_docs, job_listings):
     return curriculum_skills, job_skills
 
 
-def analyze_skill_match(curriculum_docs, job_listings):
+def analyze_skill_match(curriculum_docs=None, job_listings=None):
     print("🤖 Analyzing skill overlap using GPT-4 and Knowledge Graph...")
+
+    if curriculum_docs is None:
+        curriculum_docs = fetch_curriculum_chunks()
+    if job_listings is None:
+        job_listings = load_job_listings()
 
     # --------- LLM Analysis ---------
     curriculum_text = "\n".join([doc.page_content for doc in curriculum_docs])
