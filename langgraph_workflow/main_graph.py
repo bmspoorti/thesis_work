@@ -6,12 +6,11 @@ from langgraph.graph import StateGraph, END
 from langchain_core.runnables import RunnableLambda
 from langsmith import traceable
 
-# Fix import paths
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # Agent imports
 from agents.curriculum_agent import qa_chain
-from agents.job_market_agent import search_jobs, summarize_jobs
+from agents.job_market_agent import run_job_market_agent
 from agents.skill_mapping_agent import (
     fetch_curriculum_chunks,
     load_job_listings,
@@ -22,16 +21,17 @@ from agents.fallback_agent import FallbackAgent
 
 load_dotenv()
 
-# Shared state definition
-from typing import TypedDict
+from typing import TypedDict, List, Optional
+from langchain_core.documents import Document
 
 class GraphState(TypedDict):
     query: str
     agent: str
     result: str
+    curriculum_mode: Optional[str]
+    uploaded_docs: Optional[List[Document]]
 
-# ------------- NODE DEFINITIONS -------------
-
+# ------------ ROUTING -------------
 def route_agent(state: GraphState):
     query = state["query"].lower()
 
@@ -47,8 +47,14 @@ def route_agent(state: GraphState):
         agent = "fallback"
 
     print(f"🧭 Routing to: {agent} agent")
-    return {"agent": agent, "query": state["query"]}
+    return {
+        "agent": agent,
+        "query": state["query"],
+        "curriculum_mode": state.get("curriculum_mode", "srh"),
+        "uploaded_docs": state.get("uploaded_docs")
+    }
 
+# ------------ NODE DEFINITIONS -------------
 @traceable(name="curriculum_node")
 def curriculum_node(state: GraphState):
     result = qa_chain.invoke({"question": state["query"]})
@@ -56,15 +62,16 @@ def curriculum_node(state: GraphState):
 
 @traceable(name="job_market_node")
 def job_market_node(state: GraphState):
-    listings = search_jobs(state["query"])
-    if not listings:
-        return {"result": "❌ No job listings found.", "agent": "job_market"}
-    summary = summarize_jobs(listings)
-    return {"result": summary, "agent": "job_market"}
+    result = run_job_market_agent(state["query"])  # ✅ Use single entry point
+    return {"result": result, "agent": "job_market"}
 
 @traceable(name="skill_mapping_node")
 def skill_mapping_node(state: GraphState):
-    curriculum = fetch_curriculum_chunks()
+    if state.get("curriculum_mode") == "uploaded" and state.get("uploaded_docs"):
+        curriculum = state["uploaded_docs"]
+    else:
+        curriculum = fetch_curriculum_chunks()
+
     jobs = load_job_listings()
     analysis = analyze_skill_match(curriculum, jobs)
     return {"result": analysis, "agent": "skill_mapping"}
@@ -80,10 +87,9 @@ def fallback_node(state: GraphState):
     result = fallback.run(state["query"])
     return {"result": result, "agent": "fallback"}
 
-# ------------- GRAPH CONSTRUCTION -------------
+# ------------ GRAPH SETUP -------------
 graph = StateGraph(GraphState)
 
-# Nodes
 graph.add_node("router", RunnableLambda(route_agent))
 graph.add_node("curriculum", RunnableLambda(curriculum_node))
 graph.add_node("job_market", RunnableLambda(job_market_node))
@@ -91,7 +97,6 @@ graph.add_node("skill_mapping", RunnableLambda(skill_mapping_node))
 graph.add_node("books", RunnableLambda(books_node))
 graph.add_node("fallback", RunnableLambda(fallback_node))
 
-# Routing decisions
 graph.add_conditional_edges(
     "router",
     lambda state: state["agent"],
@@ -104,28 +109,28 @@ graph.add_conditional_edges(
     },
 )
 
-# Terminal nodes
 graph.add_edge("curriculum", END)
 graph.add_edge("job_market", END)
 graph.add_edge("skill_mapping", END)
 graph.add_edge("books", END)
 graph.add_edge("fallback", END)
 
-# Entry point
 graph.set_entry_point("router")
 app = graph.compile()
 
-# ------------- CLI EXECUTION -------------
+# ------------ CLI EXECUTION -------------
 if __name__ == "__main__":
     query = input("\n🔎 Enter your query: ")
-    final_state = app.invoke({"query": query})
+    final_state = app.invoke({
+        "query": query,
+        "curriculum_mode": "srh",
+        "uploaded_docs": None
+    })
+
     print(f"\n✅ Final Answer from {final_state['agent']} Agent:\n{final_state['result']}")
 
-    # ---- LOG TO FILE ----
     os.makedirs("logs", exist_ok=True)
-    log_path = "logs/workflow_logs.txt"
-
-    with open(log_path, "a", encoding="utf-8") as f:
+    with open("logs/workflow_logs.txt", "a", encoding="utf-8") as f:
         f.write("\n" + "=" * 60 + "\n")
         f.write(f"🕒 Timestamp: {datetime.datetime.now().isoformat()}\n")
         f.write(f"🔍 Query: {query}\n")

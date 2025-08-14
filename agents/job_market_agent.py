@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# ------------------ Fetch Jobs from Web ------------------
 def search_jobs(query: str):
     params = {
         "engine": "google",
@@ -22,12 +23,10 @@ def search_jobs(query: str):
         return []
 
     top_links = []
-    print(f"✅ Found {len(jobs)} listings:\n")
     for i, job in enumerate(jobs[:5], 1):
         title = job.get("title", "No title")
         link = job.get("link", "No link")
         snippet = job.get("snippet", "")
-        print(f"{i}. {title}\n   {link}\n   {snippet}\n")
         top_links.append({
             "title": title,
             "link": link,
@@ -36,10 +35,10 @@ def search_jobs(query: str):
 
     return top_links
 
+# ------------------ Summarize the Jobs ------------------
 def summarize_jobs(job_listings):
     if not job_listings:
-        print("⚠️ No job data to summarize.")
-        return
+        return "⚠️ No job data to summarize."
 
     chat = ChatOpenAI(model="gpt-4", temperature=0.3)
     prompt = f"""
@@ -53,17 +52,27 @@ Here are the listings:
 {json.dumps(job_listings, indent=2)}
 """
     response = chat.invoke(prompt)
-    print("\n🔍 Summary of Job Market:\n")
-    print(response.content)
+    return response.content
 
-def save_job_listings(listings):
+# ------------------ Unified Runner (used in main_graph) ------------------
+def run_job_market_agent(query: str):
+    listings = search_jobs(query)
+    if not listings:
+        return "❌ No job listings found for your query."
+
+    # ✅ Save fresh listings to file every time
     os.makedirs("data", exist_ok=True)
     with open("data/job_listings.json", "w", encoding="utf-8") as f:
         json.dump(listings, f, indent=2, ensure_ascii=False)
-    print("💾 Saved job listings to data/job_listings.json")
 
-if __name__ == "__main__":
-    query = "Data Scientist jobs in Heidelberg site:linkedin.com"
-    listings = search_jobs(query)
-    summarize_jobs(listings)
-    save_job_listings(listings)
+    # 🔍 Summarize the job listings
+    summary = summarize_jobs(listings)
+
+    # ✅ Build display output
+    jobs_markdown = "\n\n".join([
+        f"**{i+1}. {job['title']}**\n{job['snippet']}\n🔗 [Apply Here]({job['link']})"
+        for i, job in enumerate(listings[:5])
+    ])
+
+    return f"### 📊 Job Market Summary:\n\n{summary}\n\n---\n### 💼 Top Job Listings:\n\n{jobs_markdown}"
+

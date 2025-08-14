@@ -111,3 +111,196 @@ The Data Science program includes courses on Python, R, SQL, machine learning, c
 🔍 Query: What are skills missing in my curriculum?
 🤖 Routed Agent: skill_mapping
 📤 Final Answer:
+
+============================================================
+🕒 Timestamp: 2025-07-31T08:24:48.149047
+🔍 Query: top 5 Data Engineering job posts in Germany
+🤖 Routed Agent: job_market
+📤 Final Answer:
+
+============================================================
+🕒 Timestamp: 2025-08-04T17:02:21.955003
+🔍 Query: book recommendations on Deep learning
+🤖 Routed Agent: books
+📤 Final Answer:
+- "Deep Learning from Scratch: Building with Python from First Principles" by Seth Weidman
+- "Understanding Deep Learning" by Simon J.D. Prince
+- "Machine Learning with Neural Networks" by Michael Taylor
+- "Deep Learning" by Ian Goodfellow
+- "Neural Networks and Deep Learning" by Michael Nielsen
+- "Machine Learning for Mobile: Practical guide to building intelligent mobile" from the Humble Book Bundle: Artificial Intelligence & Deep Learning By Packt
+- "Dive into Deep Learning" by A. Zhang
+- "Grokking Deep Learning" by Andrew W. Trask
+- "Deep Learning Step by Step with Python: A Very Gentle Introduction to Deep Neural"
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T17:03:04.883882
+🔍 Query: what does SRH Applied data science and analytics teach?
+🤖 Routed Agent: fallback
+📤 Final Answer:
+As a chatbot, I don't have specific course details for SRH Applied Data Science and Analytics. However, generally, Applied Data Science and Analytics programs often cover topics such as statistical analysis, machine learning, predictive modeling, data visualization, and data management. They may also include training in specific tools and programming languages commonly used in the field, such as Python, R, SQL, and Tableau. For the most accurate information, I recommend checking the official SRH University website or contacting the relevant department directly.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T17:07:25.349756
+🔍 Query: Give me an overview of the Applied Data Science curriculum.
+🤖 Routed Agent: fallback
+📤 Final Answer:
+As an AI, I don't have specific details about individual university curriculums. However, I can provide a general overview of what an Applied Data Science curriculum might include. This field typically covers a broad range of topics that equip students with the skills to collect, analyze, and interpret complex data sets.
+
+1. **Introduction to Data Science**: This is a foundational course that introduces students to the basics of data science, including data collection, data analysis, and data visualization.
+
+2. **Statistics**: This course often covers statistical theory and methods, probability, regression, and hypothesis testing.
+
+3. **Programming**: Students usually learn programming languages like Python or R that are commonly used in data analysis.
+
+4. **Machine Learning**: This course typically covers various machine learning algorithms and their applications in data science.
+
+5. **Big Data Analytics**: This course may cover the tools and techniques used to analyze large datasets.
+
+6. **Data Visualization**: This course usually teaches students how to present data in a visual format that makes complex data sets easier to understand.
+
+7. **Ethics in Data Science**: This course often covers the ethical considerations that data scientists must take into account when working with data.
+
+Remember, this is a general overview and the actual curriculum can vary greatly depending on the university or institution. It's best to check the specific curriculum of the university you're interested in for the most accurate information.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T20:42:48.721316
+🔍 Query: what are the subjects in SRH data science?
+🤖 Routed Agent: curriculum
+📤 Final Answer:
+The subjects in the SRH data science program include:
+
+1. Design Thinking for Data Science
+2. Data Visualization & Storytelling
+3. Computer Vision
+4. Data Engineering
+5. Natural Language Processing (NLP)
+6. Deep Learning
+7. Biostatistics, predictive healthcare models, and medical image analysis
+8. Working with healthcare datasets, clinical trial analytics, and genomics research
+9. Mastering ETL (Extract, Transform, Load), data pipelines, and distributed computing with Apache Spark, Hadoop, and Kafka.
+10. Working with large datasets using SQL, NoSQL, and cloud storage solutions (AWS, Google Cloud, Azure).
+11. Gaining expertise in cloud-based analytics, AI, and machine learning through the SAS Viya Analytics Certificate.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T20:46:00.229928
+🔍 Query: AI job listings in Germany
+🤖 Routed Agent: job_market
+📤 Final Answer:
+📄 **Top Listings**
+1. 520 artificial intelligence Jobs in Germany, August 2025
+   https://www.glassdoor.com/Job/germany-artificial-intelligence-jobs-SRCH_IL.0,7_IN96_KO8,31.htm
+   Search Artificial intelligence jobs in Germany with company ratings & salaries. 520 open jobs for Artificial intelligence in Germany.
+2. All jobs in Germany
+   https://aijobs.net/jobs-in-germany/
+   Explore AI, ML, Data Science jobs globally. Search for vacancies in metropolitan areas with the highest demand for AI, ML, Data Science professionals worldwide.
+3. AI Jobs in Germany
+   https://aijobs.ai/germany
+   See the top AI Jobs in Germany from leading AI companies such as OpenAI, Google, Deepmind and many more. AIJobs has you covered.
+4. Artificial Intelligence jobs
+   https://www.datacareer.de/categories/artificialintelligence/
+   Find Artificial Intelligence Jobs in Germany. Datacareer offers you 500+ jobs in the field of Big Data.
+5. 4000+ Machine Learning Engineer jobs in Germany (190 ...
+   https://www.linkedin.com/jobs/search?keywords=Machine+Learning+Engineer&geoId=101282230&trk=d_flagship3_salary_explorer
+   4,000+ Machine Learning Engineer Jobs in Germany (190 new) · Junior Machine Learning Engineer (m/f/d) · AI Engineer (Intern) · ML Engineer · Machine Learning ...
+
+🧾 **Summary**
+- Common job titles: Artificial Intelligence Specialist, Machine Learning Engineer, Data Scientist, AI Engineer, ML Engineer
+- Typical skills required: Expertise in Artificial Intelligence (AI), Machine Learning (ML), and Data Science. Some roles may require specific experience levels, such as junior or intern positions.
+- Key tools or technologies mentioned: The listings do not mention specific tools or technologies, but given the nature of the roles, it can be inferred that proficiency in AI and ML technologies, programming languages, and data analysis tools would be required.
+- Any emerging trends you notice: There is a high demand for professionals in the AI, ML, and Data Science fields in Germany, with hundreds to thousands of job openings. This suggests a strong trend towards these technologies in the German job market.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T20:46:41.073196
+🔍 Query: access the skill gaps
+🤖 Routed Agent: skill_mapping
+📤 Final Answer:
+1. Skill Match Percentage: 90%
+
+2. Matched Skills:
+   - Data Science
+   - Machine Learning
+   - Deep Learning
+   - Natural Language Processing (NLP)
+   - Computer Vision
+   - Responsible AI & Ethics
+   - Statistics
+   - Data Management
+   - Data Engineering
+   - Python, R, SQL
+   - Cloud Computing (AWS, Google Cloud, Azure)
+   - Big Data Analytics (Apache Spark, Hadoop, Kafka)
+   - Scrum/Agile Project Management
+   - Data Visualization & Storytelling (Tableau, Power BI)
+   - Time Series Analysis
+   - Recommendation Engines
+   - Reinforcement Learning
+   - Entrepreneurship & Innovation
+   - Industry-specific applications (Supply Chain Analytics, Business Analytics, Media Analytics & Creative AI, Life Sciences and Bioinformatics)
+
+3. Missing Skills: 
+   - Specific experience requirement (e.g., proven experience in data analysis, model development)
+   - Bachelor's degree in Computer Science, Statistics, Mathematics, or related field (for some positions)
+
+4. Suggested Online Courses or Topics:
+   - Practical Data Science and Machine Learning projects on platforms like Kaggle to gain hands-on experience and demonstrate proven skills.
+   - Advanced courses in Computer Science, Statistics, or Mathematics on platforms like Coursera, edX, or Khan Academy to supplement academic knowledge.
+   - Professional development workshops or courses to improve soft skills and leadership capabilities.
+   - Internships or part-time roles to gain industry experience and meet specific experience requirements.
+
+❌ Missing Skills Required by Jobs:
+- python
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T20:47:26.925411
+🔍 Query: AI agents book recommendations
+🤖 Routed Agent: books
+📤 Final Answer:
+- "AI Agents in Action" by Micheal Lanham: This book provides a comprehensive framework for developing practical AI agents for real-world tasks. It's a great resource for those interested in creating intelligent agents.
+- "The Ultimate Guide to AI Agents for Business Leaders and Entrepreneurs": This book is a valuable guide for business leaders looking to leverage AI agents to enhance their daily operations and overall business transformation.
+- "AI Agents Demystified: A Leader's Guide to Innovation": This book is a useful resource for leaders aiming to drive innovation through AI agents. It provides knowledge and tools to leverage AI agents in creating new products, services, and business models.
+- AI Book Recommendations on Goodreads: This list, created and voted on by Goodreads members, includes 23 books that are highly recommended for those interested in AI. It's a great starting point for anyone looking to expand their knowledge in the field.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-04T20:47:55.610042
+🔍 Query: visa process for germany
+🤖 Routed Agent: fallback
+📤 Final Answer:
+I'm sorry for any inconvenience, but as a university assistant chatbot, I'm currently unable to provide detailed information about visa processes for specific countries like Germany. I recommend checking the official website of the German embassy or consulate in your country for the most accurate and up-to-date information.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-12T16:40:39.476249
+🔍 Query: top 5 data engineer job postings in Germany
+🤖 Routed Agent: job_market
+📤 Final Answer:
+📄 **Top Listings**
+1. Best Data Engineer Jobs in Germany 2025
+   https://builtin.com/jobs/eu/germany/data-analytics/search/data-engineer
+   Top Data Engineer Jobs in Germany · Staff Backend/Data Engineer - Reporting & Analytics · Senior Principal Data Engineer (All Genders) · Data Engineer · Principal ...
+2. Data Engineer Jobs in Germany - 2025
+   https://wellfound.com/role/l/data-engineer/germany
+   Data Engineer Jobs in Germany · Octopus Energy · FlixBus · KINEXON · Borg · Auterion · MongoDB · AppLovin · Appian.
+3. Top 5 weekly Data jobs from Germany : r/GermanTechJobs
+   https://www.reddit.com/r/GermanTechJobs/comments/1lx22w7/top_5_weekly_data_jobs_from_germany/
+   Top 5 weekly Data jobs from Germany · Data Privacy Coordinator (gn) International Team · Data Engineer (m/w/d) - Stuttgart - München · DevOps ...
+4. 1000+ Data Engineer jobs in Berlin, Berlin, Germany (74 ...
+   https://www.linkedin.com/jobs/data-engineer-jobs-berlin?trk=guest_job_search_related_jserp_link
+   Today's top 1000+ Data Engineer jobs in Berlin, Berlin, Germany. Leverage your professional network, and get hired. New Data Engineer jobs added daily.
+5. Hire Data Developers in Germany - Market trends and insights
+   https://agency-partners.com/reports/market-insights/germany-data
+   Among companies hiring Data Engineers in Germany, the leading firms include adesso SE and ALDI SÜD, both with a notable number of job postings, ...
+
+🧾 **Summary**
+- Common job titles: Data Engineer, Staff Backend/Data Engineer, Senior Principal Data Engineer, Principal Data Engineer, Data Privacy Coordinator, DevOps.
+- Typical skills required: The listings do not provide specific skills required, but typically, data engineers need skills in data analysis, data management, programming, and knowledge of data engineering tools and platforms.
+- Key tools or technologies mentioned: No specific tools or technologies are mentioned in the listings. However, data engineers usually work with tools like SQL, Python, Hadoop, and cloud platforms like AWS or Google Cloud.
+- Any emerging trends you notice: The demand for data engineers is high in Germany, with a significant number of job postings across various companies. This indicates a growing trend of data-driven decision making in businesses.
+============================================================

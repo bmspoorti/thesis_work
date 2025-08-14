@@ -23,7 +23,7 @@ def search_books(query: str):
 
     books = results.get("organic_results", [])
     if not books:
-        return "❌ No relevant books found."
+        return []
 
     suggestions = []
     for book in books[:5]:
@@ -39,7 +39,7 @@ def search_books(query: str):
 # -----------------------
 def summarize_books(book_list):
     if not book_list:
-        return "⚠️ No book data to summarize."
+        return "❌ No relevant books found."
 
     prompt = f"""
 You are a university assistant. Recommend a few relevant books or learning resources based on the following search results:
@@ -56,3 +56,31 @@ Just give concise bullet-point suggestions.
 def run_books_agent(query: str):
     results = search_books(query)
     return summarize_books(results)
+
+# -----------------------
+# 4. Simple Interactive CLI
+# -----------------------
+if __name__ == "__main__":
+    serp_key = os.getenv("SERPAPI_API_KEY")
+    if not serp_key:
+        print("❌ SERPAPI_API_KEY not found in environment. Please set it in your .env file.")
+    else:
+        print("📚 Books Agent — type your query (e.g., 'book recommendations for deep learning').")
+        print("Press Enter on an empty line or type 'exit' to quit.\n")
+
+        while True:
+            try:
+                query = input("🔎 Query: ").strip()
+                if query.lower() == "exit" or query == "":
+                    print("👋 Bye!")
+                    break
+
+                answer = run_books_agent(query)
+                print("\n✅ Suggestions:\n")
+                print(answer)
+                print("\n" + "-" * 60 + "\n")
+            except KeyboardInterrupt:
+                print("\n👋 Bye!")
+                break
+            except Exception as e:
+                print(f"❌ Error: {e}\n")

@@ -24,9 +24,9 @@ llm = ChatOpenAI(model="gpt-4", temperature=0.3)
 # ------------ WRAPPER FUNCTIONS FOR EACH AGENT ------------
 
 def run_curriculum_agent(query):
-    result = qa_chain.invoke({"query": query})
-    print("\n🤖 Curriculum Answer:\n", result["result"])
-    return result["result"]
+    result = qa_chain.invoke({"question": query})
+    print("\n🤖 Curriculum Answer:\n", result["answer"])
+    return result["answer"]
 
 def run_job_market_agent(query):
     listings = search_jobs(query)

@@ -34,3 +34,14 @@ Query:
             f.write(json.dumps(log_entry) + "\n")
 
         return response.content
+
+# -----------------------
+# Simple CLI to test fallback agent
+# -----------------------
+if __name__ == "__main__":
+    print("💬 Fallback Agent CLI")
+    user_query = input("\n🔎 Enter your query: ")
+    agent = FallbackAgent()
+    result = agent.run(user_query)
+    print("\n✅ Final Answer:\n")
+    print(result)

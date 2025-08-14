@@ -24,10 +24,10 @@ def load_all_pdfs(folder_path: str) -> list:
             })
     return texts
 
-# 🔍 Test block
-if __name__ == "__main__":
-    pdf_folder = "data/curriculum_pdfs"
-    pdfs = load_all_pdfs(pdf_folder)
-    for pdf in pdfs:
-        print(f"\n📘 {pdf['filename']}")
-        print(f"Preview (first 500 chars):\n{pdf['content'][:500]}")
+def parse_single_pdf(file_path: str) -> list:
+    """Parses a single PDF file and returns a list with one dict like load_all_pdfs()."""
+    raw_text = extract_text_from_pdf(file_path)
+    return [{
+        "filename": os.path.basename(file_path),
+        "content": raw_text
+    }]

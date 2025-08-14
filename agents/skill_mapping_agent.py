@@ -100,16 +100,16 @@ Respond with a structured breakdown including:
     missing_skills, related_paths = analyze_skill_gap(G)
     kg_explanation = explain_gap(missing_skills, related_paths)
 
-    # --------- Output ---------
-    print("\n🧾 GPT-4 Result:\n")
-    print(gpt_result.content)
-    print("\n🔗 Knowledge Graph Result:\n")
-    print(kg_explanation)
-
     return gpt_result.content + "\n\n" + kg_explanation
 
 
 if __name__ == "__main__":
+    print("🔍 Welcome to Skill Mapping CLI (SRH Curriculum vs Job Market)\n")
+    input("Press Enter to start skill analysis...\n")
+
     curriculum_docs = fetch_curriculum_chunks()
     job_listings = load_job_listings()
-    analyze_skill_match(curriculum_docs, job_listings)
+    result = analyze_skill_match(curriculum_docs, job_listings)
+
+    print("\n✅ Final Result:\n")
+    print(result)
