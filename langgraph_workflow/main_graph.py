@@ -55,10 +55,45 @@ def route_agent(state: GraphState):
     }
 
 # ------------ NODE DEFINITIONS -------------
+from langchain_community.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings
+from langchain.chains import ConversationalRetrievalChain
+from langchain_openai import ChatOpenAI
+from langchain.memory import ConversationBufferMemory
+
 @traceable(name="curriculum_node")
 def curriculum_node(state: GraphState):
-    result = qa_chain.invoke({"question": state["query"]})
-    return {"result": result["answer"], "agent": "curriculum"}
+    query = state["query"]
+
+    if state.get("curriculum_mode") == "uploaded" and state.get("uploaded_docs"):
+        print("📘 Using uploaded curriculum for curriculum Q&A")
+        # Create FAISS vectorstore from uploaded docs
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+        vectorstore = FAISS.from_documents(state["uploaded_docs"], embeddings)
+        retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 5})
+
+        # Use memory for consistent interaction
+        memory = ConversationBufferMemory(
+            memory_key="chat_history", return_messages=True, output_key="answer"
+        )
+
+        # Build chain
+        qa_chain_uploaded = ConversationalRetrievalChain.from_llm(
+            llm=ChatOpenAI(model="gpt-4", temperature=0),
+            retriever=retriever,
+            memory=memory,
+            return_source_documents=True,
+            output_key="answer"
+        )
+
+        result = qa_chain_uploaded.invoke({"question": query})
+        return {"result": result["answer"], "agent": "curriculum"}
+
+    else:
+        print("📗 Using SRH curriculum from Qdrant for curriculum Q&A")
+        result = qa_chain.invoke({"question": query})
+        return {"result": result["answer"], "agent": "curriculum"}
+
 
 @traceable(name="job_market_node")
 def job_market_node(state: GraphState):
@@ -118,6 +153,18 @@ graph.add_edge("fallback", END)
 graph.set_entry_point("router")
 app = graph.compile()
 
+def log_query(query: str, agent: str, result: str):
+    os.makedirs("logs", exist_ok=True)
+    log_path = "logs/workflow_logs.txt"
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write("\n" + "=" * 60 + "\n")
+        f.write(f"🕒 Timestamp: {datetime.datetime.now().isoformat()}\n")
+        f.write(f"🔍 Query: {query}\n")
+        f.write(f"🤖 Routed Agent: {agent}\n")
+        f.write("📤 Final Answer:\n")
+        f.write(result + "\n")
+        f.write("=" * 60 + "\n")
+
 # ------------ CLI EXECUTION -------------
 if __name__ == "__main__":
     query = input("\n🔎 Enter your query: ")
@@ -128,13 +175,6 @@ if __name__ == "__main__":
     })
 
     print(f"\n✅ Final Answer from {final_state['agent']} Agent:\n{final_state['result']}")
+    log_query(query, final_state["agent"], final_state["result"])
 
-    os.makedirs("logs", exist_ok=True)
-    with open("logs/workflow_logs.txt", "a", encoding="utf-8") as f:
-        f.write("\n" + "=" * 60 + "\n")
-        f.write(f"🕒 Timestamp: {datetime.datetime.now().isoformat()}\n")
-        f.write(f"🔍 Query: {query}\n")
-        f.write(f"🤖 Routed Agent: {final_state['agent']}\n")
-        f.write("📤 Final Answer:\n")
-        f.write(final_state["result"] + "\n")
-        f.write("=" * 60 + "\n")
+

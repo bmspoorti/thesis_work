@@ -304,3 +304,39 @@ I'm sorry for any inconvenience, but as a university assistant chatbot, I'm curr
 - Key tools or technologies mentioned: No specific tools or technologies are mentioned in the listings. However, data engineers usually work with tools like SQL, Python, Hadoop, and cloud platforms like AWS or Google Cloud.
 - Any emerging trends you notice: The demand for data engineers is high in Germany, with a significant number of job postings across various companies. This indicates a growing trend of data-driven decision making in businesses.
 ============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-14T09:53:11.291959
+🔍 Query: Top 5 jobs for data engineers in Germany
+🤖 Routed Agent: job_market
+📤 Final Answer:
+### 📊 Job Market Summary:
+
+- Common job titles: Data Engineer, Staff Backend/Data Engineer, Senior Principal Data Engineer
+- Typical skills required: The listings do not provide specific skills required for these roles. However, typically, data engineers need skills in data analysis, database management, programming, and data visualization.
+- Key tools or technologies mentioned: No specific tools or technologies are mentioned in these listings. However, data engineers generally need to be familiar with tools like SQL, Python, Hadoop, and more.
+- Any emerging trends you notice: The listings suggest that there is a high demand for data engineers in Germany, indicating a trend towards increased data-driven decision making in businesses in this region. There's also a hint towards career growth and skill development opportunities in this field.
+
+---
+### 💼 Top Job Listings:
+
+**1. Best Data Engineer Jobs in Germany 2025**
+Top Data Engineer Jobs in Germany · Staff Backend/Data Engineer - Reporting & Analytics · Data Engineer · Data Engineer · Senior Principal Data Engineer (All ...
+🔗 [Apply Here](https://builtin.com/jobs/eu/germany/data-analytics/search/data-engineer)
+
+**2. Considering an offer as data engineer in Berlin**
+What are the career opportunities for data engineers in Germany? Will I have the opportunity to grow my career and develop my skills further?
+🔗 [Apply Here](https://www.reddit.com/r/dataengineering/comments/131mjyj/considering_an_offer_as_data_engineer_in_berlin/)
+
+**3. Data Engineer Jobs in Germany - 2025**
+Data Engineer Jobs in Germany · Octopus Energy · FlixBus · KINEXON · Borg · Auterion · MongoDB · AppLovin · Appian.
+🔗 [Apply Here](https://wellfound.com/role/l/data-engineer/germany)
+
+**4. Data Engineers! What are the key skills to land a job in ...**
+In this video, we review a real job ad for Data Engineers in Germany, highlighting the essential skills and requirements needed to secure a ...
+🔗 [Apply Here](https://www.youtube.com/watch?v=1oM9I8g7aOo)
+
+**5. Data Engineering Jobs**
+Find Data Engineering Jobs in Germany. Datacareer offers you 500+ jobs in the field of Big Data.
+🔗 [Apply Here](https://www.datacareer.de/categories/dataengineering/)
+============================================================

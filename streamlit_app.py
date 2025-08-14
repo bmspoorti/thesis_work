@@ -7,7 +7,7 @@ from langchain_core.documents import Document
 # Utilities
 from utils.parse_pdf import parse_single_pdf
 from utils.chunker import chunk_text
-from langgraph_workflow.main_graph import app
+from langgraph_workflow.main_graph import app, log_query
 
 load_dotenv()
 
@@ -58,6 +58,9 @@ if user_query:
             "uploaded_docs": uploaded_docs
         })
 
+    # Save to workflow log file
+    log_query(user_query, result.get("agent", "unknown"), result.get("result", ""))
+    
     # Log assistant answer
     st.session_state.chat_history.append(("assistant", result["result"]))
 
@@ -65,20 +68,6 @@ if user_query:
     agent_used = result.get("agent", "unknown")
     st.session_state.chat_history.append(("system", f"📌 Routed to: `{agent_used}` agent"))
 
-    # ---------------- Show job listings ----------------
-    if agent_used == "job_market":
-        listings_path = "data/job_listings.json"
-        if os.path.exists(listings_path):
-            with open(listings_path, "r", encoding="utf-8") as f:
-                listings = json.load(f)
-
-            job_display = "### 💼 Top Job Listings\n"
-            for job in listings[:5]:
-                job_display += f"**{job.get('title', 'No Title')}**\n"
-                job_display += f"{job.get('snippet', '')}\n"
-                job_display += f"[Apply Here]({job.get('link', '#')})\n\n"
-
-            st.session_state.chat_history.append(("system", job_display.strip()))
 
 # ---------------- Render Chat ----------------
 for role, message in st.session_state.chat_history:
