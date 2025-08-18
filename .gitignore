@@ -5,3 +5,6 @@ venv/
 .DS_Store
 *.log
 .ipynb_checkpoints/
+logs/workflow_logs.txt
+temp_uploaded.pdf
+data/job_listings.json

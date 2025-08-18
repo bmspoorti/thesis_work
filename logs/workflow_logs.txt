@@ -340,3 +340,58 @@ In this video, we review a real job ad for Data Engineers in Germany, highlighti
 Find Data Engineering Jobs in Germany. Datacareer offers you 500+ jobs in the field of Big Data.
 🔗 [Apply Here](https://www.datacareer.de/categories/dataengineering/)
 ============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-15T11:59:36.708069
+🔍 Query: what are the subjects taught?
+🤖 Routed Agent: curriculum
+📤 Final Answer:
+The document mentions several subjects that are taught in the program. These include:
+
+1. ACCT 6305 Accounting for Managers
+2. FIN 6301 Financial Management1
+3. Elective Courses: Students may choose any master's level course with the OPRE prefix, excluding OPRE core courses, or any course listed below. 
+4. OPRE 6009 Supply Chain Management
+5. OPRE 6303 Quantitative Foundations of Business (for students who have not completed an undergraduate calculus course)
+
+The program also includes in-depth procurement knowledge utilizing a combination of learning methods which include analytical assignments, business-related and in-class project management assignments, and case study analyses.
+============================================================
+
+============================================================
+🕒 Timestamp: 2025-08-15T12:00:26.901413
+🔍 Query: top 5 jobs for Supply chain managers in USA
+🤖 Routed Agent: job_market
+📤 Final Answer:
+### 📊 Job Market Summary:
+
+- Common job titles: Buyer-Planner, Buyer, Supply Chain Analyst, Inventory Manager, Logistics Manager, Procurement Manager, Purchasing Agent, Logistics Analyst, Operations Manager, Data Analyst, Facilities Managers, Industrial Production Managers, Logisticians, Master Schedulers, Materials Managers, Customer Satisfaction Director, Distribution Center Supervisor, Demand Planning Analyst, Supply Chain Consultant.
+
+- Typical skills required: The specific skills are not mentioned in the listings, but generally, jobs in supply chain management require analytical skills, problem-solving abilities, good communication and negotiation skills, understanding of logistics and inventory management, and knowledge of procurement processes.
+
+- Key tools or technologies mentioned: No specific tools or technologies are mentioned in the listings. However, in the supply chain field, professionals often use software for inventory management, data analysis, and logistics planning.
+
+- Any emerging trends you notice: The listings do not provide enough information to identify specific emerging trends. However, the high salaries associated with these roles suggest that there is a strong demand for professionals in the supply chain management field.
+
+---
+### 💼 Top Job Listings:
+
+**1. The 10 Highest-Paying Supply Chain Jobs**
+Buyer-Planner: $81,500 · Buyer: $69,300 · Supply Chain Analyst: $85,000 · Inventory Manager: $95,900 · Logistics Manager: $109,500 · Procurement M ...
+🔗 [Apply Here](https://www.ascm.org/ascm-insights/the-10-highest-paying-supply-chain-jobs/)
+
+**2. 15 Jobs You Can Get With a Supply Chain Management ...**
+15 supply chain management degree jobs · 1. Purchasing agent · 2. Logistics analyst · 3. Logistics manager · 4. Operations manager · 5. Data analyst.
+🔗 [Apply Here](https://www.indeed.com/career-advice/finding-a-job/supply-chain-management-degree-jobs)
+
+**3. 10 Highest-Paying Jobs in Supply Chain Management**
+1. Facilities Managers · 2. Industrial Production Managers · 3. Logisticians · 4. Master Schedulers · 5. Materials Managers · 6. Procurement Managers.
+🔗 [Apply Here](https://www.bestcolleges.com/business/highest-paying-supply-chain-management-jobs/)
+
+**4. Top 10 HIGHEST PAYING Supply Chain Jobs in the US WITH ...**
+In this video I'm going to cover the very exciting topic of what are the top 10 highest paying supply chain jobs in the United States.
+🔗 [Apply Here](https://www.youtube.com/watch?v=dUvZ__OPKS0)
+
+**5. Top 5 Logistics and Supply Chain Careers**
+1) Customer Satisfaction Director · 2) Distribution Center Supervisor · 3) Procurement Manager · 4) Demand Planning Analyst · 5) Supply Chain Consultant.
+🔗 [Apply Here](https://www.argentus.com/top-5-logistics-and-supply-chain-careers/)
+============================================================
