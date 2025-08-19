@@ -15,8 +15,10 @@ qdrant-client>=1.6.0
 chromadb>=0.4.24
 
 
-serpapi>=0.1.4
+# Web Search + Tools
+serpapi @ git+https://github.com/serpapi/serpapi-python.git
 requests>=2.31.0
+
 
 # Environment and Utility
 python-dotenv>=1.0.0

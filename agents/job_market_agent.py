@@ -1,6 +1,6 @@
 import os
 import json
-from serpapi import GoogleSearch
+from utils.google_search import GoogleSearch
 from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 import streamlit as st
