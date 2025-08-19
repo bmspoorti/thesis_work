@@ -1,7 +1,9 @@
 # Core LLM and LangChain Stack
 openai>=1.0.0
 langchain==0.1.14
+langchain-community
 langgraph>=0.0.30
+langchain-openai
 
 # PDF Parsing
 pdfplumber>=0.10.2
@@ -26,4 +28,6 @@ streamlit>=1.35.0
 # Dev + Debug
 ipython>=8.21.0
 rich>=13.7.0
+
+networkx
 
