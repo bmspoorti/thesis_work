@@ -66,8 +66,8 @@ def store_embeddings():
     Qdrant.from_documents(
         documents=all_docs,
         embedding=embeddings,
-        url=os.getenv("QDRANT_URL"),
-        api_key=os.getenv("QDRANT_API_KEY"),
+        url=os.getenv("QDRANT_URL") or st.secrets.get("QDRANT_URL"),
+        api_key=os.getenv("QDRANT_API_KEY") or st.secrets.get("QDRANT_API_KEY"),
         collection_name=collection_name,
         prefer_grpc=False
     )
