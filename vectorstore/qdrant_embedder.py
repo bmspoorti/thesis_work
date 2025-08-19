@@ -1,6 +1,7 @@
 import sys
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
 # Add root project directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -24,8 +25,8 @@ def create_qdrant_collection():
     Returns a QdrantClient instance.
     """
     client = QdrantClient(
-        url=os.getenv("QDRANT_URL"),
-        api_key=os.getenv("QDRANT_API_KEY"),
+        url=os.getenv("QDRANT_URL") or st.secrets.get("QDRANT_URL"),
+        api_key=os.getenv("QDRANT_API_KEY") or st.secrets.get("QDRANT_API_KEY"),
         prefer_grpc=False  # more reliable for HTTP fallback
     )
 

@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.documents import Document
 from qdrant_client import QdrantClient
 from dotenv import load_dotenv
+import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from agents.skills_kg import extract_unique_skills, build_skill_graph, analyze_skill_gap, explain_gap
@@ -17,8 +18,8 @@ def fetch_curriculum_chunks():
     print("📘 Fetching curriculum chunks from Qdrant...")
 
     client = QdrantClient(
-        url=os.getenv("QDRANT_URL"),
-        api_key=os.getenv("QDRANT_API_KEY")
+        url=os.getenv("QDRANT_URL") or st.secrets.get("QDRANT_URL"),
+        api_key=os.getenv("QDRANT_API_KEY") or st.secrets.get("QDRANT_API_KEY")
     )
 
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")

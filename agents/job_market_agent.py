@@ -3,6 +3,7 @@ import json
 from serpapi import GoogleSearch
 from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
@@ -11,7 +12,7 @@ def search_jobs(query: str):
     params = {
         "engine": "google",
         "q": query,
-        "api_key": os.getenv("SERPAPI_API_KEY")
+        "api_key": os.getenv("SERPAPI_API_KEY") or st.secrets.get("SERPAPI_API_KEY")
     }
 
     search = GoogleSearch(params)

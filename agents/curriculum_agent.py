@@ -5,13 +5,14 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from qdrant_client import QdrantClient
+import streamlit as st
 
 load_dotenv()
 
 # Qdrant client
 qdrant = QdrantClient(
-    url=os.getenv("QDRANT_URL"),
-    api_key=os.getenv("QDRANT_API_KEY"),
+    url=os.getenv("QDRANT_URL") or st.secrets.get("QDRANT_URL"),
+    api_key=os.getenv("QDRANT_API_KEY") or st.secrets.get("QDRANT_API_KEY"),
 )
 
 # Embeddings

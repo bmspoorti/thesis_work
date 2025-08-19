@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from serpapi import GoogleSearch
 from langchain_openai import ChatOpenAI
+import streamlit as st
 
 load_dotenv()
 
@@ -15,7 +16,7 @@ def search_books(query: str):
     params = {
         "engine": "google",
         "q": f"{query} site:goodreads.com",
-        "api_key": os.getenv("SERPAPI_API_KEY")
+        "api_key": os.getenv("SERPAPI_API_KEY") or st.secrets.get("SERPAPI_API_KEY")
     }
 
     search = GoogleSearch(params)
@@ -61,7 +62,7 @@ def run_books_agent(query: str):
 # 4. Simple Interactive CLI
 # -----------------------
 if __name__ == "__main__":
-    serp_key = os.getenv("SERPAPI_API_KEY")
+    serp_key = os.getenv("SERPAPI_API_KEY") or st.secrets.get("SERPAPI_API_KEY")
     if not serp_key:
         print("❌ SERPAPI_API_KEY not found in environment. Please set it in your .env file.")
     else:
