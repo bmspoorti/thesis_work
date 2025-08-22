@@ -53,7 +53,7 @@ if user_query:
     # Log user message
     st.session_state.chat_history.append(("user", user_query))
 
-    start_time = time.time
+    start_time = time.time()
 
     with st.spinner("🤖 Thinking..."):
         result = app.invoke({
