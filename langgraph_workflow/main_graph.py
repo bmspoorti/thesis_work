@@ -153,17 +153,22 @@ graph.add_edge("fallback", END)
 graph.set_entry_point("router")
 app = graph.compile()
 
-def log_query(query: str, agent: str, result: str):
+def log_query(query: str, agent: str, result: str, latency: float = None, is_fallback: bool = False, curriculum_mode: str = "srh"):
     os.makedirs("logs", exist_ok=True)
     log_path = "logs/workflow_logs.txt"
     with open(log_path, "a", encoding="utf-8") as f:
         f.write("\n" + "=" * 60 + "\n")
         f.write(f"🕒 Timestamp: {datetime.datetime.now().isoformat()}\n")
-        f.write(f"🔍 Query: {query}\n")
-        f.write(f"🤖 Routed Agent: {agent}\n")
-        f.write("📤 Final Answer:\n")
+        f.write(f"❓ Query: {query}\n")
+        f.write(f"📂 Curriculum Mode: {curriculum_mode}\n")
+        f.write(f"📌 Routed Agent: {agent}\n")
+        if latency is not None:
+            f.write(f"⏱️ Latency: {latency:.2f} seconds\n")
+        f.write(f"🛡️ Fallback Used: {'Yes' if is_fallback else 'No'}\n")
+        f.write("📘 Final Answer:\n")
         f.write(result + "\n")
         f.write("=" * 60 + "\n")
+
 
 # ------------ CLI EXECUTION -------------
 if __name__ == "__main__":
@@ -175,6 +180,6 @@ if __name__ == "__main__":
     })
 
     print(f"\n✅ Final Answer from {final_state['agent']} Agent:\n{final_state['result']}")
-    log_query(query, final_state["agent"], final_state["result"])
+    log_query(query, final_state["agent"], final_state["result"], curriculum_mode="srh")
 
 

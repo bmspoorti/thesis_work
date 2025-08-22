@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_core.documents import Document
@@ -53,14 +54,28 @@ if user_query:
     st.session_state.chat_history.append(("user", user_query))
 
     with st.spinner("🤖 Thinking..."):
+        start_time = time.time
         result = app.invoke({
             "query": user_query,
             "curriculum_mode": curriculum_mode_flag,
             "uploaded_docs": uploaded_docs
         })
+        end_time = time.time()
+        latency = end_time - start_time
 
-    # Save to workflow log file
-    log_query(user_query, result.get("agent", "unknown"), result.get("result", ""))
+    agent_used = result.get("agent", "unknown")
+    is_fallback = agent_used == "fallback"
+
+    # Save to workflow log file with latency and fallback flag
+    log_query(
+        query=user_query,
+        agent=agent_used,
+        result=result.get("result", ""),
+        latency=latency,
+        is_fallback=is_fallback,
+        curriculum_mode=curriculum_mode_flag
+    )
+
     
     # Log assistant answer
     st.session_state.chat_history.append(("assistant", result["result"]))
