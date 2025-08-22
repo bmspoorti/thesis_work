@@ -53,8 +53,9 @@ if user_query:
     # Log user message
     st.session_state.chat_history.append(("user", user_query))
 
+    start_time = time.time
+
     with st.spinner("🤖 Thinking..."):
-        start_time = time.time
         result = app.invoke({
             "query": user_query,
             "curriculum_mode": curriculum_mode_flag,
