@@ -69,12 +69,12 @@ if user_query:
 
     # Save to workflow log file with latency and fallback flag
     log_query(
-        query=user_query,
-        agent=agent_used,
-        result=result.get("result", ""),
+        user_query,
+        result.get("agent", "unknown"),
+        result.get("result", ""),
         latency=latency,
-        is_fallback=is_fallback,
-        curriculum_mode=curriculum_mode_flag
+        curriculum_mode=curriculum_mode_flag,
+        is_fallback=(result.get("agent", "") == "fallback")
     )
 
     
