@@ -9,3 +9,4 @@ logs/workflow_logs.txt
 temp_uploaded.pdf
 data/job_listings.json
 logs/unhandled_queries.json
+logs/gcp_service_account.json
