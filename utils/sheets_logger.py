@@ -1,10 +1,9 @@
 import os
-import datetime
+import streamlit as st
 import gspread
 from google.oauth2.service_account import Credentials
-import streamlit as st
 
-# Define required scopes
+# ✅ Add this at the top
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
@@ -31,7 +30,7 @@ def log_to_gsheet(timestamp, query, agent, curriculum_mode, latency, is_fallback
         }
         creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
 
-    # Authorize with gspread
+    # Authorize and log
     client = gspread.authorize(creds)
     sheet = client.open("WorkflowLogs").sheet1
 
