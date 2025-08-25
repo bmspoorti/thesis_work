@@ -34,3 +34,6 @@ rich>=13.7.0
 
 networkx
 
+gspread
+oauth2client
+
